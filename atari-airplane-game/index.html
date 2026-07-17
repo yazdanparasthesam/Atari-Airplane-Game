@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Sky Ace — Atari Airplane Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1 class="title">SKY ACE</h1>
+      <p class="subtitle">Atari-style vertical shooter</p>
+    </header>
+
+    <main class="game-container">
+      <div class="stats-bar">
+        <div class="stat">
+          <span class="stat-label">Score</span>
+          <span class="stat-value" id="score">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Best</span>
+          <span class="stat-value" id="high-score">0</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Lives</span>
+          <span class="stat-value" id="lives">3</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Wave</span>
+          <span class="stat-value" id="wave">1</span>
+        </div>
+      </div>
+
+      <div class="canvas-wrapper">
+        <canvas id="game-canvas" width="480" height="640"></canvas>
+
+        <div class="overlay" id="overlay">
+          <div class="overlay-content" id="overlay-content">
+            <h2 id="overlay-title">Ready for Takeoff?</h2>
+            <p id="overlay-message">Fly, shoot, survive the enemy waves</p>
+            <button class="btn btn-primary" id="start-btn">Start Mission</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="difficulty-selector">
+          <span class="difficulty-label">Difficulty</span>
+          <div class="difficulty-buttons" id="difficulty-buttons">
+            <button class="btn btn-difficulty" data-difficulty="easy">Easy</button>
+            <button class="btn btn-difficulty active" data-difficulty="normal">Normal</button>
+            <button class="btn btn-difficulty" data-difficulty="hard">Hard</button>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-secondary" id="pause-btn" disabled>Pause</button>
+          <button class="btn btn-secondary" id="restart-btn" disabled>Restart</button>
+        </div>
+      </div>
+
+      <div class="mobile-controls" id="mobile-controls">
+        <button class="dpad-btn dpad-up" data-action="up" aria-label="Up">▲</button>
+        <button class="dpad-btn dpad-left" data-action="left" aria-label="Left">◀</button>
+        <button class="dpad-btn dpad-right" data-action="right" aria-label="Right">▶</button>
+        <button class="dpad-btn dpad-down" data-action="down" aria-label="Down">▼</button>
+        <button class="fire-btn" id="fire-btn" aria-label="Fire">FIRE</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> or <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to fly &nbsp;·&nbsp;
+      <kbd>Space</kbd> fire &nbsp;·&nbsp; <kbd>P</kbd> pause
+    </footer>
+  </div>
+
+  <script src="js/game.js"></script>
+</body>
+</html>
